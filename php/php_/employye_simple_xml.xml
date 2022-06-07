@@ -1,0 +1,39 @@
+• Emp.xml
+<?xml version="1.0" ?>
+<empinfo>
+<emp information="EMPLOYEE" id="bpo1">
+<eid>111</eid>
+<ename>Mr.RAM</ename>
+<des> MANAGER </des>
+<sal>12324</sal></emp>
+<emp information="EMPLOYEE" id="bpo2">
+<eid>222</eid>
+<ename>Mr.SHAM</ename>
+<des> FIANANCER </des>
+<sal>12435</sal></emp>
+<emp information="EMPLOYEE" id="bpo3">
+<eid>333</eid>
+<ename>Mrs.SITA</ename>
+<des> SUPERVISOR </des>
+<sal>12356</sal></emp>
+<emp information="EMPLOYEE" id="bpo4">
+<eid>444</eid>
+<ename>Mrs.RADHA</ename>
+<des> C.A </des>
+<sal>13324</sal></emp>
+</empinfo>
+• Emp.php
+?php
+$xml=simplexml_load_file('emp.xml') or die("can not load");
+echo"EMPLOYEE DETAILS<br>";
+echo"<table border='1'>";
+echo"<tr><th>eid</th><th>ename</th><th>des</th><th>sal</th></tr>";
+foreach($xml->emp as $a)
+{
+echo "<tr><td>".$a->eid."</td>";
+echo "<td>".$a->ename."</td>";
+echo "<td>".$a->des."</td>";
+echo"<td>".$a->sal."</td></tr>";
+}
+echo"</table>";
+?>
